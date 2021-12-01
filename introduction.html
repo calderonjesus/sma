@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introduction | Social Media Analytics</title>
+  <meta name="description" content="1 Introduction | Social Media Analytics" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introduction | Social Media Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introduction | Social Media Analytics" />
+  
+  
+  
+
+<meta name="author" content="Jesús Calderón" />
+
+
+<meta name="date" content="2021-12-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="social-network-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i><b>0.1</b> License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#the-star-wars-franchise-and-whereisrey"><i class="fa fa-check"></i><b>1.1</b> The Star Wars Franchise and #WhereIsRey?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#people-noticed"><i class="fa fa-check"></i><b>1.2</b> People Noticed…</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#and-a-tweetstorm-followed"><i class="fa fa-check"></i><b>1.3</b> … and a Tweetstorm followed</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#some-fans-were-more-influential-than-others"><i class="fa fa-check"></i><b>1.4</b> Some fans were more influential than others</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#why-do-we-about-care-social-media-analytics"><i class="fa fa-check"></i><b>1.5</b> Why Do We About Care Social Media Analytics?</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#a-partial-map-of-the-internet"><i class="fa fa-check"></i><b>1.6</b> A (Partial) Map of the Internet</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#defining-social"><i class="fa fa-check"></i><b>1.7</b> Defining “Social”</a></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#profiles"><i class="fa fa-check"></i><b>1.8</b> Profiles</a></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#sample-profiles-journalists-covering-social-media"><i class="fa fa-check"></i><b>1.9</b> Sample Profiles: Journalists covering Social Media</a></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#interactions"><i class="fa fa-check"></i><b>1.10</b> Interactions</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#an-interaction"><i class="fa fa-check"></i><b>1.11</b> An Interaction</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#relationships"><i class="fa fa-check"></i><b>1.12</b> Relationships</a></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#relationships-cont."><i class="fa fa-check"></i><b>1.13</b> Relationships (cont.)</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#a-network-map"><i class="fa fa-check"></i><b>1.14</b> A Network Map</a></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#social-data"><i class="fa fa-check"></i><b>1.15</b> Social Data</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#analytics"><i class="fa fa-check"></i><b>1.16</b> Analytics</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#a-systematic-process"><i class="fa fa-check"></i><b>1.17</b> A Systematic Process</a><ul>
+<li class="chapter" data-level="1.17.1" data-path="introduction.html"><a href="introduction.html#data-analysis-generally-includes-the-following-iterative-steps"><i class="fa fa-check"></i><b>1.17.1</b> Data analysis generally includes the following <em>iterative</em> steps:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#an-informative-and-insightful-product"><i class="fa fa-check"></i><b>1.18</b> An Informative and Insightful Product</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#skills-of-a-social-media-data-analyst-team"><i class="fa fa-check"></i><b>1.19</b> Skills of a Social Media Data Analyst (team)</a></li>
+<li class="chapter" data-level="1.20" data-path="introduction.html"><a href="introduction.html#listening-to-key-stakeholders"><i class="fa fa-check"></i><b>1.20</b> Listening to Key Stakeholders</a></li>
+<li class="chapter" data-level="1.21" data-path="introduction.html"><a href="introduction.html#sma-for-understanding-social-groups"><i class="fa fa-check"></i><b>1.21</b> SMA for Understanding Social Groups</a></li>
+<li class="chapter" data-level="1.22" data-path="introduction.html"><a href="introduction.html#sma-for-benchmarking-organizational-strategies"><i class="fa fa-check"></i><b>1.22</b> SMA for Benchmarking Organizational Strategies</a></li>
+<li class="chapter" data-level="1.23" data-path="introduction.html"><a href="introduction.html#sma-for-managing-conflicts"><i class="fa fa-check"></i><b>1.23</b> SMA for Managing Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>2</b> Social Network Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#the-origins-of-sna"><i class="fa fa-check"></i><b>2.1</b> The Origins of SNA</a></li>
+<li class="chapter" data-level="2.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#surveillance-in-gdr"><i class="fa fa-check"></i><b>2.2</b> Surveillance in GDR</a></li>
+<li class="chapter" data-level="2.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#the-small-world-experiments-and-kevin-bacon"><i class="fa fa-check"></i><b>2.3</b> The Small World Experiments and Kevin Bacon</a></li>
+<li class="chapter" data-level="2.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#high-impact-applications"><i class="fa fa-check"></i><b>2.4</b> High-Impact Applications</a></li>
+<li class="chapter" data-level="2.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#sna-terminology-nodes"><i class="fa fa-check"></i><b>2.5</b> SNA Terminology: Nodes</a></li>
+<li class="chapter" data-level="2.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#networks"><i class="fa fa-check"></i><b>2.6</b> Networks</a></li>
+<li class="chapter" data-level="2.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ties"><i class="fa fa-check"></i><b>2.7</b> Ties</a></li>
+<li class="chapter" data-level="2.8" data-path="social-network-analysis.html"><a href="social-network-analysis.html#components"><i class="fa fa-check"></i><b>2.8</b> Components</a></li>
+<li class="chapter" data-level="2.9" data-path="social-network-analysis.html"><a href="social-network-analysis.html#weak-ties-in-a-network"><i class="fa fa-check"></i><b>2.9</b> Weak Ties in a Network</a></li>
+<li class="chapter" data-level="2.10" data-path="social-network-analysis.html"><a href="social-network-analysis.html#why-do-networks-form"><i class="fa fa-check"></i><b>2.10</b> Why Do Networks Form?</a></li>
+<li class="chapter" data-level="2.11" data-path="social-network-analysis.html"><a href="social-network-analysis.html#types-of-social-networks"><i class="fa fa-check"></i><b>2.11</b> Types of Social Networks</a></li>
+<li class="chapter" data-level="2.12" data-path="social-network-analysis.html"><a href="social-network-analysis.html#types-of-networks"><i class="fa fa-check"></i><b>2.12</b> Types of Networks</a></li>
+<li class="chapter" data-level="2.13" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualizing-social-networks-network-data"><i class="fa fa-check"></i><b>2.13</b> Visualizing Social Networks: Network Data</a></li>
+<li class="chapter" data-level="2.14" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualizing-social-networks"><i class="fa fa-check"></i><b>2.14</b> Visualizing Social Networks</a></li>
+<li class="chapter" data-level="2.15" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualization-tools"><i class="fa fa-check"></i><b>2.15</b> Visualization tools</a></li>
+<li class="chapter" data-level="2.16" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualization-in-gephi"><i class="fa fa-check"></i><b>2.16</b> Visualization in Gephi</a></li>
+<li class="chapter" data-level="2.17" data-path="social-network-analysis.html"><a href="social-network-analysis.html#layout-algorithms"><i class="fa fa-check"></i><b>2.17</b> Layout Algorithms</a></li>
+<li class="chapter" data-level="2.18" data-path="social-network-analysis.html"><a href="social-network-analysis.html#social-network-metrics"><i class="fa fa-check"></i><b>2.18</b> Social Network Metrics</a></li>
+<li class="chapter" data-level="2.19" data-path="social-network-analysis.html"><a href="social-network-analysis.html#paths-and-components"><i class="fa fa-check"></i><b>2.19</b> Paths and Components</a></li>
+<li class="chapter" data-level="2.20" data-path="social-network-analysis.html"><a href="social-network-analysis.html#geodesic-distance"><i class="fa fa-check"></i><b>2.20</b> Geodesic Distance</a></li>
+<li class="chapter" data-level="2.21" data-path="social-network-analysis.html"><a href="social-network-analysis.html#density-and-modularity"><i class="fa fa-check"></i><b>2.21</b> Density and Modularity</a></li>
+<li class="chapter" data-level="2.22" data-path="social-network-analysis.html"><a href="social-network-analysis.html#network-centralization"><i class="fa fa-check"></i><b>2.22</b> Network Centralization</a></li>
+<li class="chapter" data-level="2.23" data-path="social-network-analysis.html"><a href="social-network-analysis.html#clustering-coefficient"><i class="fa fa-check"></i><b>2.23</b> Clustering coefficient</a></li>
+<li class="chapter" data-level="2.24" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ego-metrics-centrality-metrics-and-degree-centrality"><i class="fa fa-check"></i><b>2.24</b> Ego Metrics: Centrality Metrics and Degree Centrality</a></li>
+<li class="chapter" data-level="2.25" data-path="social-network-analysis.html"><a href="social-network-analysis.html#other-centrality-metrics"><i class="fa fa-check"></i><b>2.25</b> Other Centrality Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualizing-social-networks-1.html"><a href="visualizing-social-networks-1.html"><i class="fa fa-check"></i><b>3</b> Visualizing Social Networks</a></li>
+<li class="chapter" data-level="4" data-path="subgroup-analysis.html"><a href="subgroup-analysis.html"><i class="fa fa-check"></i><b>4</b> Subgroup Analysis</a></li>
+<li class="chapter" data-level="5" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>5</b> Clustering</a></li>
+<li class="chapter" data-level="6" data-path="text-analytics.html"><a href="text-analytics.html"><i class="fa fa-check"></i><b>6</b> Text Analytics</a></li>
+<li class="chapter" data-level="7" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html"><i class="fa fa-check"></i><b>7</b> Sentiment Analysis</a></li>
+<li class="chapter" data-level="8" data-path="tf-idf.html"><a href="tf-idf.html"><i class="fa fa-check"></i><b>8</b> TF-IDF</a></li>
+<li class="chapter" data-level="9" data-path="topic-modelling.html"><a href="topic-modelling.html"><i class="fa fa-check"></i><b>9</b> Topic Modelling</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Social Media Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<div id="the-star-wars-franchise-and-whereisrey" class="section level2">
+<h2><span class="header-section-number">1.1</span> The Star Wars Franchise and #WhereIsRey?</h2>
+<div class="figure">
+<img src="img/Rey_DaisyRidley.jpg" alt="" />
+<p class="caption">Rey, a central figure in <em>Star Wars: The Force Awakens</em>, was missing from merchandise</p>
+</div>
+</div>
+<div id="people-noticed" class="section level2">
+<h2><span class="header-section-number">1.2</span> People Noticed…</h2>
+<div class="columns">
+<div class="column">
+<div class="figure">
+<img src="img/tweet1.png" alt="" />
+<p class="caption">She’s the main character!</p>
+</div>
+</div><div class="column">
+<div class="figure">
+<img src="img/tweet2.png" alt="" />
+<p class="caption">How could you leave her out?</p>
+</div>
+</div>
+</div>
+</div>
+<div id="and-a-tweetstorm-followed" class="section level2">
+<h2><span class="header-section-number">1.3</span> … and a Tweetstorm followed</h2>
+<div class="figure">
+<img src="img/interactions_starwars.png" alt="" />
+<p class="caption">Ten Weeks of #WhereIsRey on Twitter (Miranda, 2019)</p>
+</div>
+</div>
+<div id="some-fans-were-more-influential-than-others" class="section level2">
+<h2><span class="header-section-number">1.4</span> Some fans were more influential than others</h2>
+<div class="figure">
+<img src="img/relationships_starwars.png" alt="" />
+<p class="caption">The Most Prominent Fans in the #WhereIsRey Conversation (Miranda, 2019)</p>
+</div>
+</div>
+<div id="why-do-we-about-care-social-media-analytics" class="section level2">
+<h2><span class="header-section-number">1.5</span> Why Do We About Care Social Media Analytics?</h2>
+<ul>
+<li><p>Social Media can be a “listening post”</p>
+<ul>
+<li>Disney defines it as “customer-centric tools companies use to assess the customer experience and identify areas where customer needs are not being met.”</li>
+<li>Social data is big, changes fast, and may be multi-dimensional or unstructured, therefore we need data tools.</li>
+</ul></li>
+<li><p>Social Media Analysis can also identify influential nodes:</p>
+<ul>
+<li>Nodes that are highly related and/or highly interactive.</li>
+<li>Lower cost of engaging with a single / a few social actors.</li>
+</ul></li>
+<li><p>We can learn techniques that are useful in domains outside Social Media:</p>
+<ul>
+<li>Social Network Analysis: used in fraud analytics, Anti-Money Laundering, Network Analysis, Entity Relationship Analysis, etc.</li>
+<li>Text Analysis: automated extraction and summarization of information</li>
+</ul></li>
+</ul>
+</div>
+<div id="a-partial-map-of-the-internet" class="section level2">
+<h2><span class="header-section-number">1.6</span> A (Partial) Map of the Internet</h2>
+<div class="figure">
+<img src="img/network_map_wiki.jpg" alt="" />
+<p class="caption">A Network Map: partial map of the Internet based on the January 15, 2005 data found on opte.org. (<a href="https://en.wikipedia.org/wiki/Network_mapping#/media/File:Internet_map_1024.jpg">Wikipedia</a>)</p>
+</div>
+</div>
+<div id="defining-social" class="section level2">
+<h2><span class="header-section-number">1.7</span> Defining “Social”</h2>
+<div class="figure">
+<img src="img/social_definition_mw.PNG" alt="" />
+<p class="caption">“Social” as defined by Merriam-Webster’s Dictionary</p>
+</div>
+<p>Three key elements:</p>
+<ul>
+<li>Profiles</li>
+<li>Interaction</li>
+<li>Relationships</li>
+</ul>
+</div>
+<div id="profiles" class="section level2">
+<h2><span class="header-section-number">1.8</span> Profiles</h2>
+<ul>
+<li><p>Describe people, organizations, and other social entities.</p></li>
+<li><p>Contain structured and unstructured data:</p>
+<ul>
+<li>Structured data:
+<ul>
+<li>It is of a predictable type (number, character, date, etc) and structure.</li>
+<li>Can be easily organized in tables or groups of tables.</li>
+<li>Examples: name, location, gender, date of birth, etc.</li>
+</ul></li>
+<li>Unstructured data:
+<ul>
+<li>Variable form.</li>
+<li>Cannot be easily organized.</li>
+<li>Example: an opinion about an event or object written in English, a picture of a puppy, an audio recording of an interview, etc.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="sample-profiles-journalists-covering-social-media" class="section level2">
+<h2><span class="header-section-number">1.9</span> Sample Profiles: Journalists covering Social Media</h2>
+<div class="figure">
+<img src="img/profile_1_t_lorenz.png" alt="" />
+<p class="caption">Taylor Lorenz on Twitter</p>
+</div>
+<div class="figure">
+<img src="img/profile_2_c_newton.png" alt="" />
+<p class="caption">Casey Newton on Facebook</p>
+</div>
+</div>
+<div id="interactions" class="section level2">
+<h2><span class="header-section-number">1.10</span> Interactions</h2>
+<ul>
+<li><p>The nature and content of people’s communications or actions.</p></li>
+<li><p>Interactions can be:</p>
+<ul>
+<li>Transactions: buy/sell, agree through a contract</li>
+<li>Communications: press releases from a company, articles about a company, social media posts by an individual</li>
+<li>Behaviours caught on film</li>
+</ul></li>
+</ul>
+</div>
+<div id="an-interaction" class="section level2">
+<h2><span class="header-section-number">1.11</span> An Interaction</h2>
+<div class="figure">
+<img src="img/taylor_interactions.png" alt="" />
+<p class="caption">“An interaction”</p>
+</div>
+</div>
+<div id="relationships" class="section level2">
+<h2><span class="header-section-number">1.12</span> Relationships</h2>
+<ul>
+<li><p>Two types of relationships:</p>
+<ul>
+<li>Standing or long-term relationships:
+<ul>
+<li>Exist by virtue of membership in a family or other social group.</li>
+<li>They can be manifested by connections on LinkedIn, followers on Twitter, or friends on Facebook.</li>
+</ul></li>
+<li>Ad hoc relationships:
+<ul>
+<li>Exist around interactions.</li>
+<li>Replying, reposting or linking to a post.</li>
+</ul></li>
+</ul></li>
+<li><p>Relationships give rise to <strong>social orderings</strong> such as groups, status, and hierarchy.</p></li>
+</ul>
+</div>
+<div id="relationships-cont." class="section level2">
+<h2><span class="header-section-number">1.13</span> Relationships (cont.)</h2>
+<ul>
+<li><p>The analysis of relationships can provide actionable insights.</p>
+<ul>
+<li>Who is the most connected node in the network that can retransmit a message more easily?</li>
+<li>How much is an influencer’s message worth?</li>
+<li>Who is disseminating fake news items?</li>
+</ul></li>
+<li><p>Relationships may also exist between people and other social artifacts:</p>
+<ul>
+<li>Location</li>
+<li>Events</li>
+<li>Technologies</li>
+</ul></li>
+</ul>
+</div>
+<div id="a-network-map" class="section level2">
+<h2><span class="header-section-number">1.14</span> A Network Map</h2>
+<div class="figure">
+<img src="img/network_maps.png" alt="" />
+<p class="caption">Network Maps (Miranda, 2019)</p>
+</div>
+</div>
+<div id="social-data" class="section level2">
+<h2><span class="header-section-number">1.15</span> Social Data</h2>
+<ul>
+<li>The five <em>Vs</em> of Big Data
+<ul>
+<li><em>Volume</em>: huge amounts of data</li>
+<li><em>Velocity</em>: the speed of accumulation of data is high or, equivalently, data is produced very fast</li>
+<li><em>Variety</em>: the nature of data can be structured or unstructured, it can involve different types of data (numbers, text, dates, pictures, links, etc.)</li>
+<li><em>Veracity</em>: inconsistencies and uncertainty in data, as data can be messy and quality/accuracy are difficult to control</li>
+<li><em>Value</em> can be obtained from Big Data, but value has to be extracted and is not readily available</li>
+</ul></li>
+<li>Social Data will generally be Big Data</li>
+</ul>
+</div>
+<div id="analytics" class="section level2">
+<h2><span class="header-section-number">1.16</span> Analytics</h2>
+<p>Analytics may refer to a process and a product:</p>
+<ul>
+<li>A <em>process</em> that is the systematic computational analysis of data</li>
+<li>The resulting <em>product</em> of such analysis, which is informative and insightful</li>
+</ul>
+</div>
+<div id="a-systematic-process" class="section level2">
+<h2><span class="header-section-number">1.17</span> A Systematic Process</h2>
+<div id="data-analysis-generally-includes-the-following-iterative-steps" class="section level3">
+<h3><span class="header-section-number">1.17.1</span> Data analysis generally includes the following <em>iterative</em> steps:</h3>
+<ul>
+<li><p>Gathering data:</p>
+<ul>
+<li>Manually</li>
+<li>Harvested from Application Programming Interfaces (APIs) or through scraping</li>
+</ul></li>
+<li><p>Cleaning and preparing data:</p>
+<ul>
+<li>Data validation</li>
+<li>Data structures</li>
+</ul></li>
+<li><p>Analysis:</p>
+<ul>
+<li>An iterative process</li>
+<li>May result in more questions</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="an-informative-and-insightful-product" class="section level2">
+<h2><span class="header-section-number">1.18</span> An Informative and Insightful Product</h2>
+<ul>
+<li><p>Provides value to the users: a person, an organization, or society</p></li>
+<li><p>Tell a coherent story or make a solid argument</p></li>
+<li><p>Use visual representations of complex relationships</p></li>
+<li><p>It should add value:</p>
+<ul>
+<li>Support and legitimize a strategic direction or maneuver</li>
+<li>Help craft new tactics</li>
+</ul></li>
+</ul>
+</div>
+<div id="skills-of-a-social-media-data-analyst-team" class="section level2">
+<h2><span class="header-section-number">1.19</span> Skills of a Social Media Data Analyst (team)</h2>
+<ul>
+<li>Domain knowledge and problem identification: helps determine what is meaningful from what is not. One needs to understand the problem, business, audience, etc.</li>
+<li>Pattern recognition: we need to identify patterns that generalize well to data we have not yet seen</li>
+<li>Quantitative skills: statistics, time-series analysis, graph theory, etc.</li>
+<li>Technical skills: manipulation and preparation of structured and unstructured data, Big Data, etc.</li>
+<li>Visualization: not trivial and requires good design skills</li>
+<li>Curiosity and problem solving</li>
+</ul>
+</div>
+<div id="listening-to-key-stakeholders" class="section level2">
+<h2><span class="header-section-number">1.20</span> Listening to Key Stakeholders</h2>
+<ul>
+<li>Detect problems
+<ul>
+<li>Identify problems as they emerge and take corrective action at early stage</li>
+</ul></li>
+<li>Understand sentiment
+<ul>
+<li>Understand stakeholders’ messages as they convey emotions</li>
+</ul></li>
+<li>Identify emotional hotspots
+<ul>
+<li>Combination of strong sentiment and centrality (influence) within a social network</li>
+</ul></li>
+<li>Help determine where to listen
+<ul>
+<li>Optimize the use of organization’s resources</li>
+</ul></li>
+</ul>
+</div>
+<div id="sma-for-understanding-social-groups" class="section level2">
+<h2><span class="header-section-number">1.21</span> SMA for Understanding Social Groups</h2>
+<ul>
+<li>Visualize configurations of social ties</li>
+<li>Identify influential actors</li>
+<li>Ascertain group fault lines</li>
+</ul>
+</div>
+<div id="sma-for-benchmarking-organizational-strategies" class="section level2">
+<h2><span class="header-section-number">1.22</span> SMA for Benchmarking Organizational Strategies</h2>
+<p>User make critical decisions on</p>
+<ul>
+<li>Friending: who becomes your friend
+<ul>
+<li>Exposure to information shared by their friends within their own news feeds</li>
+<li>Inferences made from whom you friend with (symbolic consequences)</li>
+</ul></li>
+<li>Reciprocate friending</li>
+<li>What to post</li>
+</ul>
+</div>
+<div id="sma-for-managing-conflicts" class="section level2">
+<h2><span class="header-section-number">1.23</span> SMA for Managing Conflicts</h2>
+<ul>
+<li>Determine whether a social group is polarized</li>
+<li>Represent competing parties’ semantic networks</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="social-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Social Network Analysis | Social Media Analytics</title>
+  <meta name="description" content="2 Social Network Analysis | Social Media Analytics" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Social Network Analysis | Social Media Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Social Network Analysis | Social Media Analytics" />
+  
+  
+  
+
+<meta name="author" content="Jesús Calderón" />
+
+
+<meta name="date" content="2021-12-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="visualizing-social-networks-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i><b>0.1</b> License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#the-star-wars-franchise-and-whereisrey"><i class="fa fa-check"></i><b>1.1</b> The Star Wars Franchise and #WhereIsRey?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#people-noticed"><i class="fa fa-check"></i><b>1.2</b> People Noticed…</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#and-a-tweetstorm-followed"><i class="fa fa-check"></i><b>1.3</b> … and a Tweetstorm followed</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#some-fans-were-more-influential-than-others"><i class="fa fa-check"></i><b>1.4</b> Some fans were more influential than others</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#why-do-we-about-care-social-media-analytics"><i class="fa fa-check"></i><b>1.5</b> Why Do We About Care Social Media Analytics?</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#a-partial-map-of-the-internet"><i class="fa fa-check"></i><b>1.6</b> A (Partial) Map of the Internet</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#defining-social"><i class="fa fa-check"></i><b>1.7</b> Defining “Social”</a></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#profiles"><i class="fa fa-check"></i><b>1.8</b> Profiles</a></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#sample-profiles-journalists-covering-social-media"><i class="fa fa-check"></i><b>1.9</b> Sample Profiles: Journalists covering Social Media</a></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#interactions"><i class="fa fa-check"></i><b>1.10</b> Interactions</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#an-interaction"><i class="fa fa-check"></i><b>1.11</b> An Interaction</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#relationships"><i class="fa fa-check"></i><b>1.12</b> Relationships</a></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#relationships-cont."><i class="fa fa-check"></i><b>1.13</b> Relationships (cont.)</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#a-network-map"><i class="fa fa-check"></i><b>1.14</b> A Network Map</a></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#social-data"><i class="fa fa-check"></i><b>1.15</b> Social Data</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#analytics"><i class="fa fa-check"></i><b>1.16</b> Analytics</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#a-systematic-process"><i class="fa fa-check"></i><b>1.17</b> A Systematic Process</a><ul>
+<li class="chapter" data-level="1.17.1" data-path="introduction.html"><a href="introduction.html#data-analysis-generally-includes-the-following-iterative-steps"><i class="fa fa-check"></i><b>1.17.1</b> Data analysis generally includes the following <em>iterative</em> steps:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#an-informative-and-insightful-product"><i class="fa fa-check"></i><b>1.18</b> An Informative and Insightful Product</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#skills-of-a-social-media-data-analyst-team"><i class="fa fa-check"></i><b>1.19</b> Skills of a Social Media Data Analyst (team)</a></li>
+<li class="chapter" data-level="1.20" data-path="introduction.html"><a href="introduction.html#listening-to-key-stakeholders"><i class="fa fa-check"></i><b>1.20</b> Listening to Key Stakeholders</a></li>
+<li class="chapter" data-level="1.21" data-path="introduction.html"><a href="introduction.html#sma-for-understanding-social-groups"><i class="fa fa-check"></i><b>1.21</b> SMA for Understanding Social Groups</a></li>
+<li class="chapter" data-level="1.22" data-path="introduction.html"><a href="introduction.html#sma-for-benchmarking-organizational-strategies"><i class="fa fa-check"></i><b>1.22</b> SMA for Benchmarking Organizational Strategies</a></li>
+<li class="chapter" data-level="1.23" data-path="introduction.html"><a href="introduction.html#sma-for-managing-conflicts"><i class="fa fa-check"></i><b>1.23</b> SMA for Managing Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>2</b> Social Network Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#the-origins-of-sna"><i class="fa fa-check"></i><b>2.1</b> The Origins of SNA</a></li>
+<li class="chapter" data-level="2.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#surveillance-in-gdr"><i class="fa fa-check"></i><b>2.2</b> Surveillance in GDR</a></li>
+<li class="chapter" data-level="2.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#the-small-world-experiments-and-kevin-bacon"><i class="fa fa-check"></i><b>2.3</b> The Small World Experiments and Kevin Bacon</a></li>
+<li class="chapter" data-level="2.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#high-impact-applications"><i class="fa fa-check"></i><b>2.4</b> High-Impact Applications</a></li>
+<li class="chapter" data-level="2.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#sna-terminology-nodes"><i class="fa fa-check"></i><b>2.5</b> SNA Terminology: Nodes</a></li>
+<li class="chapter" data-level="2.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#networks"><i class="fa fa-check"></i><b>2.6</b> Networks</a></li>
+<li class="chapter" data-level="2.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ties"><i class="fa fa-check"></i><b>2.7</b> Ties</a></li>
+<li class="chapter" data-level="2.8" data-path="social-network-analysis.html"><a href="social-network-analysis.html#components"><i class="fa fa-check"></i><b>2.8</b> Components</a></li>
+<li class="chapter" data-level="2.9" data-path="social-network-analysis.html"><a href="social-network-analysis.html#weak-ties-in-a-network"><i class="fa fa-check"></i><b>2.9</b> Weak Ties in a Network</a></li>
+<li class="chapter" data-level="2.10" data-path="social-network-analysis.html"><a href="social-network-analysis.html#why-do-networks-form"><i class="fa fa-check"></i><b>2.10</b> Why Do Networks Form?</a></li>
+<li class="chapter" data-level="2.11" data-path="social-network-analysis.html"><a href="social-network-analysis.html#types-of-social-networks"><i class="fa fa-check"></i><b>2.11</b> Types of Social Networks</a></li>
+<li class="chapter" data-level="2.12" data-path="social-network-analysis.html"><a href="social-network-analysis.html#types-of-networks"><i class="fa fa-check"></i><b>2.12</b> Types of Networks</a></li>
+<li class="chapter" data-level="2.13" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualizing-social-networks-network-data"><i class="fa fa-check"></i><b>2.13</b> Visualizing Social Networks: Network Data</a></li>
+<li class="chapter" data-level="2.14" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualizing-social-networks"><i class="fa fa-check"></i><b>2.14</b> Visualizing Social Networks</a></li>
+<li class="chapter" data-level="2.15" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualization-tools"><i class="fa fa-check"></i><b>2.15</b> Visualization tools</a></li>
+<li class="chapter" data-level="2.16" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualization-in-gephi"><i class="fa fa-check"></i><b>2.16</b> Visualization in Gephi</a></li>
+<li class="chapter" data-level="2.17" data-path="social-network-analysis.html"><a href="social-network-analysis.html#layout-algorithms"><i class="fa fa-check"></i><b>2.17</b> Layout Algorithms</a></li>
+<li class="chapter" data-level="2.18" data-path="social-network-analysis.html"><a href="social-network-analysis.html#social-network-metrics"><i class="fa fa-check"></i><b>2.18</b> Social Network Metrics</a></li>
+<li class="chapter" data-level="2.19" data-path="social-network-analysis.html"><a href="social-network-analysis.html#paths-and-components"><i class="fa fa-check"></i><b>2.19</b> Paths and Components</a></li>
+<li class="chapter" data-level="2.20" data-path="social-network-analysis.html"><a href="social-network-analysis.html#geodesic-distance"><i class="fa fa-check"></i><b>2.20</b> Geodesic Distance</a></li>
+<li class="chapter" data-level="2.21" data-path="social-network-analysis.html"><a href="social-network-analysis.html#density-and-modularity"><i class="fa fa-check"></i><b>2.21</b> Density and Modularity</a></li>
+<li class="chapter" data-level="2.22" data-path="social-network-analysis.html"><a href="social-network-analysis.html#network-centralization"><i class="fa fa-check"></i><b>2.22</b> Network Centralization</a></li>
+<li class="chapter" data-level="2.23" data-path="social-network-analysis.html"><a href="social-network-analysis.html#clustering-coefficient"><i class="fa fa-check"></i><b>2.23</b> Clustering coefficient</a></li>
+<li class="chapter" data-level="2.24" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ego-metrics-centrality-metrics-and-degree-centrality"><i class="fa fa-check"></i><b>2.24</b> Ego Metrics: Centrality Metrics and Degree Centrality</a></li>
+<li class="chapter" data-level="2.25" data-path="social-network-analysis.html"><a href="social-network-analysis.html#other-centrality-metrics"><i class="fa fa-check"></i><b>2.25</b> Other Centrality Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualizing-social-networks-1.html"><a href="visualizing-social-networks-1.html"><i class="fa fa-check"></i><b>3</b> Visualizing Social Networks</a></li>
+<li class="chapter" data-level="4" data-path="subgroup-analysis.html"><a href="subgroup-analysis.html"><i class="fa fa-check"></i><b>4</b> Subgroup Analysis</a></li>
+<li class="chapter" data-level="5" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>5</b> Clustering</a></li>
+<li class="chapter" data-level="6" data-path="text-analytics.html"><a href="text-analytics.html"><i class="fa fa-check"></i><b>6</b> Text Analytics</a></li>
+<li class="chapter" data-level="7" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html"><i class="fa fa-check"></i><b>7</b> Sentiment Analysis</a></li>
+<li class="chapter" data-level="8" data-path="tf-idf.html"><a href="tf-idf.html"><i class="fa fa-check"></i><b>8</b> TF-IDF</a></li>
+<li class="chapter" data-level="9" data-path="topic-modelling.html"><a href="topic-modelling.html"><i class="fa fa-check"></i><b>9</b> Topic Modelling</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Social Media Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="social-network-analysis" class="section level1">
+<h1><span class="header-section-number">2</span> Social Network Analysis</h1>
+<div id="the-origins-of-sna" class="section level2">
+<h2><span class="header-section-number">2.1</span> The Origins of SNA</h2>
+<ul>
+<li>Methods for studying social networks were first developed by Georg Simmel, a sociologist</li>
+<li>Sociometry:
+<ul>
+<li>Developed in the 1930s by Jacob Moreno and Helen Jennings</li>
+<li>Study of social network phenomena</li>
+<li>Preference-based social structures</li>
+<li>Structures can be shown in sociograms or social network diagrams</li>
+<li>Founded journal <em>Sociometry</em> in 1937</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/moreno1.png" alt="" />
+<p class="caption">Graph in <a href="https://archive.org/details/whoshallsurviven00jlmo/page/86/mode/2up">Moreno’s <em>Who Shall Survive</em></a></p>
+</div>
+</div>
+<div id="surveillance-in-gdr" class="section level2">
+<h2><span class="header-section-number">2.2</span> Surveillance in GDR</h2>
+<div class="figure">
+<img src="img/stasi.jpg" alt="" />
+<p class="caption"><a href="https://richardzipser.com/bernd-jentzsch-1982/">Bernd Jentzsch’s</a> social network (Miranda, 2019)</p>
+</div>
+<ul>
+<li>Social network diagram believed to be produced based on <a href="https://en.wikipedia.org/wiki/Stasi">Stasi surveillence</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Julia_Angwin">Julia Argwin</a>: modern-day surveillance (by governments, corporations, and individuals) is a high/tech version of Stasi surveillance and SNA.</li>
+</ul>
+</div>
+<div id="the-small-world-experiments-and-kevin-bacon" class="section level2">
+<h2><span class="header-section-number">2.3</span> The Small World Experiments and Kevin Bacon</h2>
+<ul>
+<li>Small World Experiments
+<ul>
+<li>Conducted by Stanley Milgram in 1960s</li>
+<li>Select two random individuals and send an object (a folder) from one to the other</li>
+<li>Object to be passed from acquaintance to acquaintance</li>
+<li>Track people involved</li>
+<li>Number of intermediaries used to connect source to target ranged from two to ten, and averaged six</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/kevin_bacon.png" alt="" />
+<p class="caption">Six Degrees to Kevin Bacon (<a href="https://medium.com/@ctrhansen/six-degrees-of-kevin-bacon-cli-application-2b3f8e48c105">Hansen, 2019</a>)</p>
+</div>
+</div>
+<div id="high-impact-applications" class="section level2">
+<h2><span class="header-section-number">2.4</span> High-Impact Applications</h2>
+<ul>
+<li>AIDS patient contact tracing
+<ul>
+<li>During late 1970s and early 1980s used by CDC</li>
+<li>Used to identify patient zero in North America, an Air Canada flight attendant</li>
+<li>Limits of SNA: further analysis indicated that other patients contracted AIDS virus earlier.</li>
+</ul></li>
+<li>Sociometry borrowed tools from graph theory and matrix algebra</li>
+<li>During the 1990s, software tools for SNA appear</li>
+</ul>
+</div>
+<div id="sna-terminology-nodes" class="section level2">
+<h2><span class="header-section-number">2.5</span> SNA Terminology: Nodes</h2>
+<ul>
+<li><strong>Node</strong>
+<ul>
+<li>A discrete actor (e.g., person, organization, group, etc.) or entity (e.g., place, object, event, or concept).</li>
+<li>Also called <em>vertex</em></li>
+</ul></li>
+<li><strong>Ego</strong>
+<ul>
+<li>A focal node</li>
+<li>A node of particular interest</li>
+</ul></li>
+<li><strong>Alter</strong>
+<ul>
+<li>Nodes surrounding the <em>ego</em></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/jesus_friends.png" alt="" />
+<p class="caption">A sample network</p>
+</div>
+</div>
+<div id="networks" class="section level2">
+<h2><span class="header-section-number">2.6</span> Networks</h2>
+<ul>
+<li><strong>Complete network</strong>
+<ul>
+<li>Entire network of a particular social space</li>
+</ul></li>
+<li><strong>Ego network</strong>
+<ul>
+<li>Nodes surrounding the focal ego</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/jesus_friends_ego.png" alt="" />
+<p class="caption">Ego network is highlighted</p>
+</div>
+</div>
+<div id="ties" class="section level2">
+<h2><span class="header-section-number">2.7</span> Ties</h2>
+<ul>
+<li><strong>Tie</strong>
+<ul>
+<li>A link between nodes</li>
+<li>Also called <em>Edge</em></li>
+</ul></li>
+<li><strong>Reciprocity</strong>
+<ul>
+<li>Reciprocated: mutual</li>
+<li>Unreciprocated: not returned</li>
+</ul></li>
+<li><strong>Strength</strong>
+<ul>
+<li>Strong tie: positive affect, repetitive engagements, multiplexity</li>
+<li>Weak tie: among acquaintances, has informational advantages</li>
+</ul></li>
+<li><strong>Cardinality of nodes</strong>
+<ul>
+<li>Dyad: relationship between two nodes</li>
+<li>Triad: relationship among three nodes</li>
+</ul></li>
+<li><strong>Position</strong>
+<ul>
+<li>Central: pass-through node for most ties</li>
+<li>Peripheral: outlying nodes in a network</li>
+</ul></li>
+</ul>
+</div>
+<div id="components" class="section level2">
+<h2><span class="header-section-number">2.8</span> Components</h2>
+<ul>
+<li><strong>Component</strong>
+<ul>
+<li>A node or collection of nodes</li>
+<li>Separated from rest of a network</li>
+<li>Can be a node, dyad, triad, or more complex network</li>
+</ul></li>
+<li><strong>Information brokers</strong>
+<ul>
+<li>An individual that connects otherwise disconnected components</li>
+<li>All otherwise disconnected components are internal to the organization</li>
+</ul></li>
+<li><strong>Boundary spanner</strong>
+<ul>
+<li>Connects otherwise disconnected components, but some of the components are external to the organization</li>
+</ul></li>
+</ul>
+</div>
+<div id="weak-ties-in-a-network" class="section level2">
+<h2><span class="header-section-number">2.9</span> Weak Ties in a Network</h2>
+<ul>
+<li><em>Information brokers</em> and <em>boundary spanners</em>
+<ul>
+<li>Tend to be weak ties</li>
+<li>They are useful for disseminating information across components
+<img src="img/components.png" alt="Weak ties" /></li>
+</ul></li>
+</ul>
+</div>
+<div id="why-do-networks-form" class="section level2">
+<h2><span class="header-section-number">2.10</span> Why Do Networks Form?</h2>
+<ul>
+<li>Propinquity
+<ul>
+<li>Physical proximity</li>
+</ul></li>
+<li>Homophily
+<ul>
+<li>Demographic or other forms of similarity</li>
+</ul></li>
+<li>Transitivity
+<ul>
+<li>Tendency for ties to achieve balance and avoid dissonance</li>
+<li>Gives rise to <em>network closure</em> (fully connected network)</li>
+</ul></li>
+</ul>
+</div>
+<div id="types-of-social-networks" class="section level2">
+<h2><span class="header-section-number">2.11</span> Types of Social Networks</h2>
+<ul>
+<li><p><strong>Directed network</strong></p>
+<ul>
+<li>Can have, both, reciprocated and unreciprocated ties</li>
+<li>Examples: Twitter, favs, payments, email</li>
+<li>Reciprocated ties are shown as ties with bi-directional arrows</li>
+<li>Unreciprocated ties are shown with single direction arrows</li>
+</ul></li>
+<li><p><strong>Undirected network</strong></p>
+<ul>
+<li>All ties are reciprocated</li>
+<li>Examples: LinkedIn, Facebook, co-authors, members of board of directors</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/datamodel.jpg" alt="" />
+<p class="caption">A directed network showing a data model (<a href="https://guides.neo4j.com/sandbox/icij-paradise-papers/datashape.html">Neo4j</a>)</p>
+</div>
+</div>
+<div id="types-of-networks" class="section level2">
+<h2><span class="header-section-number">2.12</span> Types of Networks</h2>
+<ul>
+<li><p><strong>One-Mode Network</strong></p>
+<ul>
+<li>All nodes are entities of same type</li>
+</ul></li>
+<li><p><strong>Two-Mode Network</strong></p>
+<ul>
+<li>Nodes are entities of different types</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="img/two_mode.png" alt="" />
+<p class="caption">A two-mode network from the <a href="https://offshoreleaks.icij.org/pages/howtouse">ICIJ’s Panama Papers Investigation</a></p>
+</div>
+</div>
+<div id="visualizing-social-networks-network-data" class="section level2">
+<h2><span class="header-section-number">2.13</span> Visualizing Social Networks: Network Data</h2>
+<ul>
+<li><p>Network data needs to be setup in the form that the software package requires it</p></li>
+<li><p>There are two main forms to setup network data:</p>
+<ul>
+<li>Adjacency matrix</li>
+<li>Edge list</li>
+</ul></li>
+<li><p><strong>Adjacency matrix</strong></p>
+<ul>
+<li><em>n x n matrix</em>, where <em>n</em> is the number of nodes</li>
+<li>Symmetric matrix if undirected network</li>
+<li>Generally (but not necessarily), we will see an asymmetric matrix if we have a directed network</li>
+</ul></li>
+<li><p><strong>Edge list</strong></p>
+<ul>
+<li>Lists of connected pairs, i.e., between every pair of nodes there is a tie</li>
+<li>Order is not important in undirected network</li>
+<li>Order is fundamental in directed network</li>
+</ul></li>
+</ul>
+</div>
+<div id="visualizing-social-networks" class="section level2">
+<h2><span class="header-section-number">2.14</span> Visualizing Social Networks</h2>
+<div class="figure">
+<img src="img/network_forms.png" alt="" />
+<p class="caption">Bavelas and Leavitt’s networks (Miranda, 2019)</p>
+</div>
+</div>
+<div id="visualization-tools" class="section level2">
+<h2><span class="header-section-number">2.15</span> Visualization tools</h2>
+<ul>
+<li><a href="https://www.smrfoundation.org/nodexl/">NodeXL</a>: an Excel template. Simple, but limited by spreadsheet’s limitations</li>
+<li><a href="https://sites.google.com/site/ucinetsoftware/home">UCINet</a>: range of metrics and stats</li>
+<li><a href="http://mrvar.fdv.uni-lj.si/pajek/">Pajek</a>: analysis and visualization of very large networks</li>
+<li><a href="https://gephi.org/">Gephi</a>: powerful visualization tool</li>
+<li><a href="https://www.r-project.org/">R</a>: multiple <a href="https://cran.r-project.org/web/views/gR.html">packages for SNA</a></li>
+</ul>
+</div>
+<div id="visualization-in-gephi" class="section level2">
+<h2><span class="header-section-number">2.16</span> Visualization in Gephi</h2>
+<div class="figure">
+<img src="img/gephi_network.png" alt="" />
+<p class="caption">A network graph produced in Gephi</p>
+</div>
+</div>
+<div id="layout-algorithms" class="section level2">
+<h2><span class="header-section-number">2.17</span> Layout Algorithms</h2>
+<ul>
+<li><p><strong>Random algorithm</strong></p>
+<ul>
+<li>Assigns each node to a random position</li>
+<li>Tries to avoid collisions / overlapping nodes</li>
+</ul></li>
+<li><p><strong>Force-directed layout algorithms</strong></p>
+<ul>
+<li>Iteratively bring together connected nodes and push apart unconnected nodes</li>
+<li>Examples: Fruchterman-Reingold and Harel-Koren Fast Multiscale</li>
+</ul></li>
+<li><p><strong>Tree layout algorithms</strong></p>
+<ul>
+<li>Ideal for depicting hierarchical social structures</li>
+</ul></li>
+</ul>
+</div>
+<div id="social-network-metrics" class="section level2">
+<h2><span class="header-section-number">2.18</span> Social Network Metrics</h2>
+<ul>
+<li><p><strong>Subgraph</strong></p>
+<ul>
+<li>A subset of a graph that we want to analyze</li>
+</ul></li>
+<li><p>Metrics provide information about the properties of an entire network beyond what we can visualize</p></li>
+</ul>
+</div>
+<div id="paths-and-components" class="section level2">
+<h2><span class="header-section-number">2.19</span> Paths and Components</h2>
+<ul>
+<li><p>If a path between two nodes exists, we say that one node is <strong>reachable</strong> from the other</p></li>
+<li><p><strong>Connected component</strong></p>
+<ul>
+<li>A single node that is disconnected from the rest of the network, i.e., an <strong>isolate</strong></li>
+<li>Multiple nodes that are connected among themselves, but unreachable from the rest of the network</li>
+</ul></li>
+</ul>
+</div>
+<div id="geodesic-distance" class="section level2">
+<h2><span class="header-section-number">2.20</span> Geodesic Distance</h2>
+<ul>
+<li><p>Geodesic Distance (GeoDist)</p>
+<ul>
+<li>GeoDist between two nodes: shortest path between two nodes</li>
+<li>GeoDist distance of a graph: the maximum geodesic distance in the graph</li>
+</ul></li>
+<li><p>GeoDist measures communication efficiency</p>
+<ul>
+<li>Fewer hops, imply faster and better communication</li>
+</ul></li>
+<li><p>GeoDist also indicates cohesion</p>
+<ul>
+<li>A larger max or average GeoDist, indicates that the network can be easily fragmented</li>
+</ul></li>
+</ul>
+</div>
+<div id="density-and-modularity" class="section level2">
+<h2><span class="header-section-number">2.21</span> Density and Modularity</h2>
+<ul>
+<li><p><strong>Density</strong></p>
+<ul>
+<li>Proportion of all possible ties that exist or are realized</li>
+</ul></li>
+<li><p><strong>Modularity</strong></p>
+<ul>
+<li>Measures the extent to which the network contains densely connected modules to the inside, but sparsely connected modules among themselves</li>
+<li>Modularity depends on the algorithm applied</li>
+</ul></li>
+</ul>
+</div>
+<div id="network-centralization" class="section level2">
+<h2><span class="header-section-number">2.22</span> Network Centralization</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Measures the extent to which information or other resource flows through one node</li>
+<li>Can be calculated from any of the ego centrality measures</li>
+<li>Measures centralization as the sum of differences between the maximum centrality value and each individual one scaled by the maximum potential centrality</li>
+</ul>
+</div><div class="column">
+<p><img src="img/centralization_formula.PNG" /></p>
+</div>
+</div>
+</div>
+<div id="clustering-coefficient" class="section level2">
+<h2><span class="header-section-number">2.23</span> Clustering coefficient</h2>
+<ul>
+<li>For a graph, it is calculated as the average of clustering coefficient of each node</li>
+<li>It measures the proportion of cluster members who are tied to each other</li>
+<li>It captures the cliquishness of a graph</li>
+</ul>
+</div>
+<div id="ego-metrics-centrality-metrics-and-degree-centrality" class="section level2">
+<h2><span class="header-section-number">2.24</span> Ego Metrics: Centrality Metrics and Degree Centrality</h2>
+<ul>
+<li><strong>Centrality</strong>
+<ul>
+<li>Measures the prominence of a node</li>
+<li>A node is prominent because of degree centrality, betweenness centrality or closeness centrality</li>
+</ul></li>
+<li><strong>Degree centrality</strong>
+<ul>
+<li>The count of an ego’s direct connections</li>
+<li>For directed networks, we can calculate the in-degree centrality and the out-degree centrality</li>
+<li>Many times, degree centrality is normalized by the total tie count in the network</li>
+</ul></li>
+<li><strong>Eigenvector centrality</strong>
+<ul>
+<li>A relative measure of degree centrality</li>
+<li>Adjusts a node’s prominence based on the relative prominence of odes to which it is tied</li>
+<li>Eigenvector centrality attaches prominence to nodes that are undertaking strategic or efficient activity</li>
+</ul></li>
+</ul>
+</div>
+<div id="other-centrality-metrics" class="section level2">
+<h2><span class="header-section-number">2.25</span> Other Centrality Metrics</h2>
+<ul>
+<li><p><strong>Betweenness centrality</strong></p>
+<ul>
+<li>Measures the number of indirect ties a node mediates</li>
+<li>Equivalently, measures the number of geodesic paths in which the node acts as a bridge</li>
+</ul></li>
+<li><p><strong>Closeness centrality</strong></p>
+<ul>
+<li>Measures closeness by considering the inverse of the number of hops to each other node</li>
+<li>More hops mean that the other nodes are farther apart</li>
+</ul></li>
+<li><p><strong>Clustering coefficient</strong></p>
+<ul>
+<li>Proportion of one’s ties that are also tied to each other</li>
+<li>Speaks to the extent to which social structures around the ego are structurally equivalent</li>
+</ul></li>
+<li><p>A <strong>clique</strong> is a fully connected subgroup within a network</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizing-social-networks-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
