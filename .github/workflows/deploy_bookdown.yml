@@ -1,7 +1,7 @@
 on:
   push:
      branches:
-       - master
+       - main
 
   
 
@@ -42,10 +42,12 @@ jobs:
          # Destination path
          path: _book # optional
      - name: Deploy to GitHub Pages
-       uses: Cecilapp/GitHub-Pages-deploy@v2
+       uses: Cecilapp/GitHub-Pages-deploy@v3
        env:
-          EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
-          GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-          BUILD_DIR: _book/                     # "_site/" by default
-    
- 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # https://github.com/settings/tokens
+         with:
+          email: ${{ secrets.EMAIL }}
+          build_dir: _book
+          branch: gh-pages
+          jekyll: no                     
+          commit_message: Pages built ${{ steps.date.outputs.date }}
