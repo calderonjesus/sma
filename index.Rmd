@@ -9,4 +9,14 @@ output:
 
 # Preface {-}
 
-In this book, we discuss methods and techniques for Social Media Analysis.
+This is a collection of notes and handouts for a course on Social Media Analytics.
+
+You can find the complete set of notes in: [https://calderonjesus.github.io/sma/](https://calderonjesus.github.io/sma/)
+
+The code used to produce the book is in: [https://github.com/calderonjesus/sma](https://github.com/calderonjesus/sma)
+
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
