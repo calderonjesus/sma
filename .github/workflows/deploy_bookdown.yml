@@ -49,4 +49,4 @@ jobs:
          build_dir: _book
          branch: gh-pages
          jekyll: no                     
-         commit_message: Pages built ${{ steps.date.outputs.date }}
+         #commit_message: Pages built ${{ steps.date.outputs.date }}
