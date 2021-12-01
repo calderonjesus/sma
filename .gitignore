@@ -10,3 +10,4 @@ libs/
 .Rhistory
 .RData
 .Ruserdata
+*.Rproj
