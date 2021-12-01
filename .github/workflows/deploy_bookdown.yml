@@ -1,113 +1,68 @@
-# For help debugging build failures open an issue on the RStudio community with the 'github-actions' tag.
-# https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:
-    inputs:
-      ghpages:
-        description: 'Build gitbook with pandoc devel and deploy gitbook to gh-page for checking differences'
-        required: false
-        default: true
+# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+on: [push, pull_request]
 
-name: Build and deploy book
+name: CI-CD
 
 jobs:
-  build:
-    runs-on: macOS-latest
+  CI-CD:
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      # We keep a matrix for convenience, but we would always want to run on one
+      # single OS and R version
+      matrix:
+        config:
+          - {os: ubuntu-latest, r: 'release'}
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      R_KNITR_OPTIONS: "knitr.chunk.tidy=TRUE"
 
     steps:
-      - name: Checkout Repo
+
+      - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Install R
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Setup R
         uses: r-lib/actions/setup-r@v1
-
-      - name: Install Pandoc
-        if: ${{ ! github.event.inputs.ghpages }}
-        uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: '2.7.3'
+          r-version: ${{ matrix.config.r }}
+          use-public-rspm: true
 
-      - uses: cderv/actions/setup-pandoc-nightly@nightly-pandoc
-        # install nightly when checking on gh-pages
-        if: github.event.inputs.ghpages
+      - name: Install and cache dependencies
+        uses: r-lib/actions/setup-r-dependencies@v1
 
-      - name: Install TinyTeX
-        if: github.event_name == 'push'
-        uses: r-lib/actions/setup-tinytex@v1
-        env:
-          # install full prebuilt version
-          TINYTEX_INSTALLER: TinyTeX
-
-      - uses: r-lib/actions/setup-r-dependencies@v1
-        with:
-          extra-packages: |
-            sessioninfo
-          needs: book
-
-      - name: Install OS dependencies
+      - name: Build site
         run: |
-          brew update
-          brew install --cask xquartz
-          brew install --cask calibre
-      - name: Install phamtomJS for webshot
-        run: |
-          webshot::install_phantomjs()
+          bookdown::render_book("index.Rmd", "bookdown::gitbook")
         shell: Rscript {0}
 
-      - name: Install bookdown package
-        run: xfun::install_dir(".")
-        shell: Rscript {0}
-
-      - name: Session info
-        run: |
-          options(width = 100)
-          pkgs <- installed.packages()[, "Package"]
-          sessioninfo::session_info(pkgs, include_base = TRUE)
-          rmarkdown::find_pandoc()
-        shell: Rscript {0}
-
-      - name: Cache bookdown results
-        uses: actions/cache@v2
+      - name: Upload built site artifact
+        uses: actions/upload-artifact@v1
         with:
-          path: inst/examples/_bookdown_files
-          key: bookdown-${{ hashFiles('inst/examples/*Rmd') }}
-          restore-keys: bookdown-
+          name: site
+          path: _book
 
-      - name: Test build of HTML books
-        if: github.event_name == 'pull_request'
-        run: make -C inst/examples gitbook bs4_book
+      - name: Test website
+        uses: docker://klakegg/html-proofer:3.18.8
+        with:
+          args: _book
 
-      - name: Build and Deploy all book
-        if: github.event_name == 'push'
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
+        # TODO: consider switching to JamesIves/github-pages-deploy-action
+        # uses: JamesIves/github-pages-deploy-action@4.1.4
+        # with:
+        #   branch: gh-pages
+        #   folder: _book
+        uses: crazy-max/ghaction-github-pages@v2.2.0
+        with:
+          target_branch: gh-pages
+          build_dir: _book
+          jekyll: false
         env:
-          CONNECT_API_KEY: ${{ secrets.RSC_BOOKDOWN_ORG_TOKEN }}
-          CONTENT_ID: 3
-        run: make -C inst/examples all
-
-      - name: Build Gitbook only
-        if: github.event_name == 'workflow_dispatch'
-        run: make -C inst/examples gitbook
-
-      - name: Deploy Gitbook to gh-pages
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.ghpages
-        env:
-          DEPLOY_GH_PAGES: ${{ github.event.inputs.ghpages }}
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          branch: gh-pages
-          folder: inst/examples/_book
-
-      - name: Upload book folder for debug
-        if: failure()
-        uses: actions/upload-artifact@main
-        with:
-          name: book-dir
-          path: inst/examples
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
