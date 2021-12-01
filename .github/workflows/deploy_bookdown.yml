@@ -53,7 +53,7 @@ jobs:
       #     args: _book
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         # TODO: consider switching to JamesIves/github-pages-deploy-action
         # uses: JamesIves/github-pages-deploy-action@4.1.4
         # with:
