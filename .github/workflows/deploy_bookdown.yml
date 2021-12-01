@@ -47,10 +47,10 @@ jobs:
           name: site
           path: _book
 
-      - name: Test website
-        uses: docker://klakegg/html-proofer:3.18.8
-        with:
-          args: _book
+      # - name: Test website
+      #   uses: docker://klakegg/html-proofer:3.18.8
+      #   with:
+      #     args: _book
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/master'
