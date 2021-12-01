@@ -1,0 +1,8 @@
+Package: sma
+Title: Social Media Analysis
+Version: 0.1
+Authors@R: person("Jesús", "Calderon", email = "jesus.calderon@maclear.ca",
+                  role = c("aut", "cre"))
+Description: A course on social media analytics
+Depends: R (>= 3.1.0)
+License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
